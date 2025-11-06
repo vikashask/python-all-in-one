@@ -5,30 +5,15 @@ from typing import List, Dict, Optional
 
 
 class ExpenseTracker:
-    """
-    A personal expense tracker that allows users to manage expenses,
-    set budgets, and save/load data from CSV files.
-    """
 
     def __init__(self, csv_filename: str = "expenses.csv"):
-        """
-        Initialize the ExpenseTracker with an empty expense list and CSV filename.
-
-        Args:
-            csv_filename (str): Name of the CSV file to save/load expenses
-        """
         self.expenses: List[Dict[str, str]] = []
         self.monthly_budget: float = 0.0
         self.csv_filename = csv_filename
         self.load_expenses()
 
     def add_expense(self) -> None:
-        """
-        Add a new expense by prompting user for details.
-        Validates input and stores expense as a dictionary.
-        """
         print("\n--- Add New Expense ---")
-
         # Get and validate date
         while True:
             date_input = input("Enter date (YYYY-MM-DD): ").strip()
@@ -74,10 +59,6 @@ class ExpenseTracker:
         print(f"✓ Expense of ${amount:.2f} for {category} added successfully!")
 
     def view_expenses(self) -> None:
-        """
-        Display all stored expenses in a formatted table.
-        Validates data before displaying and skips incomplete entries.
-        """
         print("\n--- Your Expenses ---")
 
         if not self.expenses:
@@ -108,9 +89,6 @@ class ExpenseTracker:
         print(f"Total amount: ${total_amount:.2f}")
 
     def set_budget(self) -> None:
-        """
-        Allow user to set a monthly budget.
-        """
         print("\n--- Set Monthly Budget ---")
 
         while True:
@@ -125,10 +103,6 @@ class ExpenseTracker:
                 print("Please enter a valid number.")
 
     def track_budget(self) -> None:
-        """
-        Calculate total expenses and compare with monthly budget.
-        Display warnings or remaining balance.
-        """
         print("\n--- Budget Tracking ---")
 
         if self.monthly_budget <= 0:
@@ -158,9 +132,6 @@ class ExpenseTracker:
         print(f"Budget used: {percentage:.1f}%")
 
     def save_expenses(self) -> None:
-        """
-        Save all expenses to a CSV file.
-        """
         try:
             with open(self.csv_filename, "w", newline="", encoding="utf-8") as file:
                 if self.expenses:
@@ -186,9 +157,6 @@ class ExpenseTracker:
             print(f"❌ Error saving expenses: {e}")
 
     def load_expenses(self) -> None:
-        """
-        Load expenses from CSV file when the program starts.
-        """
         if not os.path.exists(self.csv_filename):
             print(f"No existing expense file found. Starting fresh.")
             return
@@ -229,9 +197,6 @@ class ExpenseTracker:
         print("-" * 50)
 
     def run(self) -> None:
-        """
-        Main program loop with interactive menu.
-        """
         print("Welcome to Personal Expense Tracker!")
 
         while True:
@@ -265,15 +230,6 @@ class ExpenseTracker:
                 print(f"❌ An error occurred: {e}")
 
     def _validate_date(self, date_str: str) -> bool:
-        """
-        Validate date format (YYYY-MM-DD).
-
-        Args:
-            date_str (str): Date string to validate
-
-        Returns:
-            bool: True if valid, False otherwise
-        """
         try:
             datetime.strptime(date_str, "%Y-%m-%d")
             return True
@@ -281,15 +237,7 @@ class ExpenseTracker:
             return False
 
     def _validate_expense(self, expense: Dict) -> bool:
-        """
-        Validate that expense dictionary has all required fields.
 
-        Args:
-            expense (Dict): Expense dictionary to validate
-
-        Returns:
-            bool: True if valid, False otherwise
-        """
         required_fields = ["date", "category", "amount", "description"]
 
         # Check if all required fields exist and are not empty
