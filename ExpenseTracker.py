@@ -33,7 +33,7 @@ class ExpenseTracker:
         # Get and validate amount
         while True:
             try:
-                amount = float(input("Enter amount: $").strip())
+                amount = float(input("Enter amount: ₹").strip())
                 if amount > 0:
                     break
                 print("Amount must be positive.")
@@ -56,7 +56,7 @@ class ExpenseTracker:
         }
 
         self.expenses.append(expense)
-        print(f"✓ Expense of ${amount:.2f} for {category} added successfully!")
+        print(f"✓ Expense of ₹{amount:.2f} for {category} added successfully!")
 
     def view_expenses(self) -> None:
         print("\n--- Your Expenses ---")
@@ -77,7 +77,7 @@ class ExpenseTracker:
             if self._validate_expense(expense):
                 print(
                     f"{expense['date']:<12} {expense['category']:<15} "
-                    f"${expense['amount']:<9.2f} {expense['description']:<30}"
+                    f"₹{expense['amount']:<9.2f} {expense['description']:<30}"
                 )
                 valid_expenses += 1
                 total_amount += expense["amount"]
@@ -86,17 +86,17 @@ class ExpenseTracker:
 
         print("-" * 70)
         print(f"Total valid expenses: {valid_expenses}")
-        print(f"Total amount: ${total_amount:.2f}")
+        print(f"Total amount: ₹{total_amount:.2f}")
 
     def set_budget(self) -> None:
         print("\n--- Set Monthly Budget ---")
 
         while True:
             try:
-                budget = float(input("Enter your monthly budget: $").strip())
+                budget = float(input("Enter your monthly budget: ₹").strip())
                 if budget > 0:
                     self.monthly_budget = budget
-                    print(f"✓ Monthly budget set to ${budget:.2f}")
+                    print(f"✓ Monthly budget set to ₹{budget:.2f}")
                     break
                 print("Budget must be positive.")
             except ValueError:
@@ -117,15 +117,15 @@ class ExpenseTracker:
             if self._validate_expense(expense)
         )
 
-        print(f"Monthly Budget: ${self.monthly_budget:.2f}")
-        print(f"Total Expenses: ${total_expenses:.2f}")
+        print(f"Monthly Budget: ₹{self.monthly_budget:.2f}")
+        print(f"Total Expenses: ₹{total_expenses:.2f}")
 
         if total_expenses > self.monthly_budget:
             overspent = total_expenses - self.monthly_budget
-            print(f"⚠️  WARNING: You have exceeded your budget by ${overspent:.2f}!")
+            print(f"⚠️  WARNING: You have exceeded your budget by ₹{overspent:.2f}!")
         else:
             remaining = self.monthly_budget - total_expenses
-            print(f"✓ You have ${remaining:.2f} left for the month")
+            print(f"✓ You have ₹{remaining:.2f} left for the month")
 
         # Calculate percentage spent
         percentage = (total_expenses / self.monthly_budget) * 100
