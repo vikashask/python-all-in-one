@@ -40,28 +40,28 @@ AI  ⊃  Machine Learning  ⊃  Deep Learning
 
 ### When to Use Deep Learning vs Traditional ML
 
-| Criteria | Traditional ML | Deep Learning |
-|----------|---------------|---------------|
-| Data size | Small-medium (< 10K rows) | Large (100K+ rows) |
+| Criteria            | Traditional ML                  | Deep Learning                |
+| ------------------- | ------------------------------- | ---------------------------- |
+| Data size           | Small-medium (< 10K rows)       | Large (100K+ rows)           |
 | Feature engineering | Manual, domain expertise needed | Automatic feature extraction |
-| Interpretability | High (you understand features) | Low (black box) |
-| Hardware | CPU is fine | GPU/TPU recommended |
-| Training time | Fast (seconds-minutes) | Slow (minutes-hours-days) |
-| Best for | Tabular data, structured data | Images, text, audio, video |
+| Interpretability    | High (you understand features)  | Low (black box)              |
+| Hardware            | CPU is fine                     | GPU/TPU recommended          |
+| Training time       | Fast (seconds-minutes)          | Slow (minutes-hours-days)    |
+| Best for            | Tabular data, structured data   | Images, text, audio, video   |
 
 ### Key Concepts
 
-| Term | Meaning |
-|------|---------|
-| **Neuron** | Basic unit — receives inputs, applies weights + bias, outputs through activation |
-| **Layer** | Group of neurons working together |
-| **Weight** | Learnable parameter that determines feature importance |
-| **Bias** | Offset added to weighted sum (like y-intercept) |
-| **Epoch** | One complete pass through all training data |
-| **Batch** | Subset of data processed before weight update |
-| **Forward Pass** | Input → through layers → prediction |
-| **Backpropagation** | Calculate gradients → update weights to reduce error |
-| **Learning Rate** | Step size for weight updates (too big = overshoot, too small = slow) |
+| Term                | Meaning                                                                          |
+| ------------------- | -------------------------------------------------------------------------------- |
+| **Neuron**          | Basic unit — receives inputs, applies weights + bias, outputs through activation |
+| **Layer**           | Group of neurons working together                                                |
+| **Weight**          | Learnable parameter that determines feature importance                           |
+| **Bias**            | Offset added to weighted sum (like y-intercept)                                  |
+| **Epoch**           | One complete pass through all training data                                      |
+| **Batch**           | Subset of data processed before weight update                                    |
+| **Forward Pass**    | Input → through layers → prediction                                              |
+| **Backpropagation** | Calculate gradients → update weights to reduce error                             |
+| **Learning Rate**   | Step size for weight updates (too big = overshoot, too small = slow)             |
 
 ---
 
@@ -73,12 +73,12 @@ AI  ⊃  Machine Learning  ⊃  Deep Learning
 
 ### TensorFlow vs PyTorch
 
-| Feature | TensorFlow/Keras | PyTorch |
-|---------|-----------------|---------|
-| API style | Sequential, Functional | Pythonic, dynamic |
-| Deployment | TF Serving, TFLite, TF.js | TorchServe |
-| Industry adoption | Production/mobile | Research |
-| Ease of use | Keras = very easy | More code but flexible |
+| Feature           | TensorFlow/Keras          | PyTorch                |
+| ----------------- | ------------------------- | ---------------------- |
+| API style         | Sequential, Functional    | Pythonic, dynamic      |
+| Deployment        | TF Serving, TFLite, TF.js | TorchServe             |
+| Industry adoption | Production/mobile         | Research               |
+| Ease of use       | Keras = very easy         | More code but flexible |
 
 ---
 
@@ -133,17 +133,17 @@ Example: 784 inputs → 128 neurons → 64 neurons → 10 outputs
 
 ### Types of Layers
 
-| Layer | Purpose | Code |
-|-------|---------|------|
-| **Dense** | Fully connected, every neuron connects to all inputs | `layers.Dense(128, activation='relu')` |
-| **Conv2D** | Extract spatial features from images | `layers.Conv2D(32, (3,3), activation='relu')` |
-| **MaxPool2D** | Reduce spatial dimensions | `layers.MaxPooling2D((2,2))` |
-| **Flatten** | Convert 2D → 1D for Dense layers | `layers.Flatten()` |
-| **Dropout** | Randomly disable neurons (regularization) | `layers.Dropout(0.5)` |
-| **BatchNorm** | Normalize layer inputs (faster training) | `layers.BatchNormalization()` |
-| **LSTM** | Process sequences (text, time series) | `layers.LSTM(64)` |
-| **Embedding** | Convert words to dense vectors | `layers.Embedding(vocab_size, 128)` |
-| **GRU** | Simpler version of LSTM | `layers.GRU(64)` |
+| Layer         | Purpose                                              | Code                                          |
+| ------------- | ---------------------------------------------------- | --------------------------------------------- |
+| **Dense**     | Fully connected, every neuron connects to all inputs | `layers.Dense(128, activation='relu')`        |
+| **Conv2D**    | Extract spatial features from images                 | `layers.Conv2D(32, (3,3), activation='relu')` |
+| **MaxPool2D** | Reduce spatial dimensions                            | `layers.MaxPooling2D((2,2))`                  |
+| **Flatten**   | Convert 2D → 1D for Dense layers                     | `layers.Flatten()`                            |
+| **Dropout**   | Randomly disable neurons (regularization)            | `layers.Dropout(0.5)`                         |
+| **BatchNorm** | Normalize layer inputs (faster training)             | `layers.BatchNormalization()`                 |
+| **LSTM**      | Process sequences (text, time series)                | `layers.LSTM(64)`                             |
+| **Embedding** | Convert words to dense vectors                       | `layers.Embedding(vocab_size, 128)`           |
+| **GRU**       | Simpler version of LSTM                              | `layers.GRU(64)`                              |
 
 ---
 
@@ -275,15 +275,15 @@ model.evaluate(X_test, y_test)
 
 ### Visual Quick Reference
 
-| Function | Formula | Range | Use Case |
-|----------|---------|-------|----------|
-| **ReLU** | max(0, x) | [0, ∞) | **Default for hidden layers** |
-| **Sigmoid** | 1/(1+e⁻ˣ) | (0, 1) | Binary classification output |
-| **Softmax** | eˣⁱ/Σeˣⁱ | (0, 1), sums to 1 | Multi-class output |
-| **Tanh** | (eˣ-e⁻ˣ)/(eˣ+e⁻ˣ) | (-1, 1) | Hidden layers (centered output) |
-| **Leaky ReLU** | max(0.01x, x) | (-∞, ∞) | Avoid dying ReLU problem |
-| **ELU** | x if x>0, α(eˣ-1) if x≤0 | (-α, ∞) | Smoother than ReLU |
-| **Swish** | x · sigmoid(x) | (-∞, ∞) | Modern alternative to ReLU |
+| Function       | Formula                  | Range             | Use Case                        |
+| -------------- | ------------------------ | ----------------- | ------------------------------- |
+| **ReLU**       | max(0, x)                | [0, ∞)            | **Default for hidden layers**   |
+| **Sigmoid**    | 1/(1+e⁻ˣ)                | (0, 1)            | Binary classification output    |
+| **Softmax**    | eˣⁱ/Σeˣⁱ                 | (0, 1), sums to 1 | Multi-class output              |
+| **Tanh**       | (eˣ-e⁻ˣ)/(eˣ+e⁻ˣ)        | (-1, 1)           | Hidden layers (centered output) |
+| **Leaky ReLU** | max(0.01x, x)            | (-∞, ∞)           | Avoid dying ReLU problem        |
+| **ELU**        | x if x>0, α(eˣ-1) if x≤0 | (-α, ∞)           | Smoother than ReLU              |
+| **Swish**      | x · sigmoid(x)           | (-∞, ∞)           | Modern alternative to ReLU      |
 
 ### Decision Guide
 
@@ -307,14 +307,14 @@ layers.LeakyReLU(alpha=0.1)                   # As separate layer
 
 ### Which Loss for Which Problem?
 
-| Problem Type | Loss Function | Output Activation | Labels |
-|-------------|--------------|-------------------|--------|
-| **Binary Classification** | `binary_crossentropy` | sigmoid (1 neuron) | 0 or 1 |
-| **Multi-class (int labels)** | `sparse_categorical_crossentropy` | softmax (N neurons) | 0, 1, 2... |
-| **Multi-class (one-hot)** | `categorical_crossentropy` | softmax (N neurons) | [0,1,0,0] |
-| **Regression** | `mse` (mean squared error) | none/linear (1 neuron) | continuous |
-| **Regression (outlier-robust)** | `mae` (mean absolute error) | none/linear | continuous |
-| **Regression (balanced)** | `huber` | none/linear | continuous |
+| Problem Type                    | Loss Function                     | Output Activation      | Labels     |
+| ------------------------------- | --------------------------------- | ---------------------- | ---------- |
+| **Binary Classification**       | `binary_crossentropy`             | sigmoid (1 neuron)     | 0 or 1     |
+| **Multi-class (int labels)**    | `sparse_categorical_crossentropy` | softmax (N neurons)    | 0, 1, 2... |
+| **Multi-class (one-hot)**       | `categorical_crossentropy`        | softmax (N neurons)    | [0,1,0,0]  |
+| **Regression**                  | `mse` (mean squared error)        | none/linear (1 neuron) | continuous |
+| **Regression (outlier-robust)** | `mae` (mean absolute error)       | none/linear            | continuous |
+| **Regression (balanced)**       | `huber`                           | none/linear            | continuous |
 
 ```python
 # Binary
@@ -336,13 +336,13 @@ model.compile(loss='mse', ...)
 
 ### Comparison Table
 
-| Optimizer | Description | When to Use |
-|-----------|------------|-------------|
-| **SGD** | Stochastic Gradient Descent | Simplest, good with momentum |
-| **Adam** | Adaptive learning rate | **Default choice for most problems** |
-| **RMSprop** | Adapts per-parameter | Good for RNNs |
-| **AdaGrad** | Adapts, decaying LR | Sparse data |
-| **AdamW** | Adam + weight decay | Better generalization |
+| Optimizer   | Description                 | When to Use                          |
+| ----------- | --------------------------- | ------------------------------------ |
+| **SGD**     | Stochastic Gradient Descent | Simplest, good with momentum         |
+| **Adam**    | Adaptive learning rate      | **Default choice for most problems** |
+| **RMSprop** | Adapts per-parameter        | Good for RNNs                        |
+| **AdaGrad** | Adapts, decaying LR         | Sparse data                          |
+| **AdamW**   | Adam + weight decay         | Better generalization                |
 
 ### Usage
 
@@ -383,14 +383,14 @@ Common starting values: 0.001 (Adam), 0.01 (SGD with momentum)
 
 ### Technique Overview
 
-| Technique | What it does | Code |
-|-----------|-------------|------|
-| **Dropout** | Randomly disables neurons during training | `layers.Dropout(0.3)` |
-| **L1 Regularization** | Adds penalty for large weights (sparse) | `kernel_regularizer='l1'` |
-| **L2 Regularization** | Adds penalty for large weights (small) | `kernel_regularizer='l2'` |
-| **Batch Normalization** | Normalizes layer input | `layers.BatchNormalization()` |
-| **Early Stopping** | Stop training when validation loss stops improving | `EarlyStopping(patience=10)` |
-| **Data Augmentation** | Create modified copies of training data | See Section 13 |
+| Technique               | What it does                                       | Code                          |
+| ----------------------- | -------------------------------------------------- | ----------------------------- |
+| **Dropout**             | Randomly disables neurons during training          | `layers.Dropout(0.3)`         |
+| **L1 Regularization**   | Adds penalty for large weights (sparse)            | `kernel_regularizer='l1'`     |
+| **L2 Regularization**   | Adds penalty for large weights (small)             | `kernel_regularizer='l2'`     |
+| **Batch Normalization** | Normalizes layer input                             | `layers.BatchNormalization()` |
+| **Early Stopping**      | Stop training when validation loss stops improving | `EarlyStopping(patience=10)`  |
+| **Data Augmentation**   | Create modified copies of training data            | See Section 13                |
 
 ### Implementation
 
@@ -399,21 +399,21 @@ from tensorflow.keras import regularizers
 
 model = models.Sequential([
     # L2 regularization on weights
-    layers.Dense(128, activation='relu', 
+    layers.Dense(128, activation='relu',
                  kernel_regularizer=regularizers.l2(0.01),
                  input_shape=(20,)),
-    
+
     # Batch Normalization
     layers.BatchNormalization(),
-    
+
     # Dropout (30% of neurons disabled each step)
     layers.Dropout(0.3),
-    
+
     layers.Dense(64, activation='relu',
                  kernel_regularizer=regularizers.l2(0.01)),
     layers.BatchNormalization(),
     layers.Dropout(0.3),
-    
+
     layers.Dense(1, activation='sigmoid')
 ])
 
@@ -459,21 +459,21 @@ model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', padding='same'),
     layers.MaxPooling2D((2, 2)),                    # 32x32 → 16x16
     layers.Dropout(0.25),
-    
+
     # Block 2: Deeper features
     layers.Conv2D(64, (3, 3), activation='relu', padding='same'),
     layers.BatchNormalization(),
     layers.Conv2D(64, (3, 3), activation='relu', padding='same'),
     layers.MaxPooling2D((2, 2)),                    # 16x16 → 8x8
     layers.Dropout(0.25),
-    
+
     # Block 3: Even deeper
     layers.Conv2D(128, (3, 3), activation='relu', padding='same'),
     layers.BatchNormalization(),
     layers.Conv2D(128, (3, 3), activation='relu', padding='same'),
     layers.MaxPooling2D((2, 2)),                    # 8x8 → 4x4
     layers.Dropout(0.25),
-    
+
     # Classification head
     layers.Flatten(),                                # 4×4×128 = 2048
     layers.Dense(256, activation='relu'),
@@ -496,13 +496,13 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=64,
 
 ### Key CNN Parameters
 
-| Parameter | Meaning | Common Values |
-|-----------|---------|--------------|
-| **filters** | Number of feature detectors | 32, 64, 128 (double each block) |
-| **kernel_size** | Filter size | (3,3) most common, (5,5) for larger |
-| **padding='same'** | Keep spatial dimensions | Always use for deep networks |
-| **strides** | Step size of filter | (1,1) default, (2,2) for downsampling |
-| **pool_size** | Pooling window | (2,2) standard |
+| Parameter          | Meaning                     | Common Values                         |
+| ------------------ | --------------------------- | ------------------------------------- |
+| **filters**        | Number of feature detectors | 32, 64, 128 (double each block)       |
+| **kernel_size**    | Filter size                 | (3,3) most common, (5,5) for larger   |
+| **padding='same'** | Keep spatial dimensions     | Always use for deep networks          |
+| **strides**        | Step size of filter         | (1,1) default, (2,2) for downsampling |
+| **pool_size**      | Pooling window              | (2,2) standard                        |
 
 ### Input Shape for CNN
 
@@ -612,11 +612,11 @@ model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
 
 ### LSTM vs GRU Comparison
 
-| Feature | LSTM | GRU |
-|---------|------|-----|
-| Gates | 3 (forget, input, output) | 2 (reset, update) |
-| Parameters | More (slower) | Fewer (faster) |
-| Performance | Better for long sequences | Similar, sometimes better |
+| Feature     | LSTM                       | GRU                         |
+| ----------- | -------------------------- | --------------------------- |
+| Gates       | 3 (forget, input, output)  | 2 (reset, update)           |
+| Parameters  | More (slower)              | Fewer (faster)              |
+| Performance | Better for long sequences  | Similar, sometimes better   |
 | When to use | Default for sequence tasks | When training speed matters |
 
 ```python
@@ -682,13 +682,13 @@ history_fine = model.fit(train_data, epochs=10)
 
 ### Popular Pre-trained Models
 
-| Model | Size | Accuracy (ImageNet) | Speed | Best For |
-|-------|------|-------------------|-------|----------|
-| **MobileNetV2** | 14 MB | 71.8% | Very fast | Mobile/edge devices |
-| **ResNet50** | 98 MB | 74.9% | Medium | General purpose |
-| **VGG16** | 528 MB | 71.3% | Slow | Simple, educational |
-| **EfficientNetB0-B7** | 20-256 MB | 77-84% | Varies | Best accuracy/efficiency |
-| **InceptionV3** | 92 MB | 77.9% | Medium | Fine-grained classification |
+| Model                 | Size      | Accuracy (ImageNet) | Speed     | Best For                    |
+| --------------------- | --------- | ------------------- | --------- | --------------------------- |
+| **MobileNetV2**       | 14 MB     | 71.8%               | Very fast | Mobile/edge devices         |
+| **ResNet50**          | 98 MB     | 74.9%               | Medium    | General purpose             |
+| **VGG16**             | 528 MB    | 71.3%               | Slow      | Simple, educational         |
+| **EfficientNetB0-B7** | 20-256 MB | 77-84%              | Varies    | Best accuracy/efficiency    |
+| **InceptionV3**       | 92 MB     | 77.9%               | Medium    | Fine-grained classification |
 
 ### Loading Images for Transfer Learning
 
@@ -772,24 +772,24 @@ model = models.Sequential([
 ```python
 def plot_history(history):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
-    
+
     # Accuracy
     ax1.plot(history.history['accuracy'], label='Training')
     ax1.plot(history.history['val_accuracy'], label='Validation')
     ax1.set_title('Model Accuracy')
     ax1.set_xlabel('Epoch')
     ax1.legend()
-    
+
     # Loss
     ax2.plot(history.history['loss'], label='Training')
     ax2.plot(history.history['val_loss'], label='Validation')
     ax2.set_title('Model Loss')
     ax2.set_xlabel('Epoch')
     ax2.legend()
-    
+
     plt.tight_layout()
     plt.show()
-    
+
 plot_history(history)
 ```
 
@@ -854,14 +854,14 @@ trainable_params = sum(p.numpy().size for p in model.trainable_weights)
 
 ### Key Hyperparameters to Tune
 
-| Parameter | Range to Try | Impact |
-|-----------|-------------|--------|
-| **Learning rate** | 1e-4, 5e-4, 1e-3, 5e-3 | Very high |
-| **Batch size** | 16, 32, 64, 128 | Medium |
-| **# Hidden layers** | 1-5 | High |
-| **# Neurons per layer** | 32, 64, 128, 256, 512 | High |
-| **Dropout rate** | 0.1, 0.2, 0.3, 0.5 | Medium |
-| **Optimizer** | Adam, SGD+momentum, RMSprop | Medium |
+| Parameter               | Range to Try                | Impact    |
+| ----------------------- | --------------------------- | --------- |
+| **Learning rate**       | 1e-4, 5e-4, 1e-3, 5e-3      | Very high |
+| **Batch size**          | 16, 32, 64, 128             | Medium    |
+| **# Hidden layers**     | 1-5                         | High      |
+| **# Neurons per layer** | 32, 64, 128, 256, 512       | High      |
+| **Dropout rate**        | 0.1, 0.2, 0.3, 0.5          | Medium    |
+| **Optimizer**           | Adam, SGD+momentum, RMSprop | Medium    |
 
 ### Using Keras Tuner
 
@@ -874,7 +874,7 @@ import keras_tuner as kt
 
 def build_model(hp):
     model = models.Sequential()
-    
+
     # Tune number of layers and neurons
     for i in range(hp.Int('num_layers', 1, 4)):
         model.add(layers.Dense(
@@ -882,9 +882,9 @@ def build_model(hp):
             activation='relu'
         ))
         model.add(layers.Dropout(hp.Float('dropout', 0.1, 0.5, step=0.1)))
-    
+
     model.add(layers.Dense(1, activation='sigmoid'))
-    
+
     model.compile(
         optimizer=keras.optimizers.Adam(
             learning_rate=hp.Choice('learning_rate', [1e-2, 1e-3, 1e-4])
@@ -970,12 +970,12 @@ async def predict(file: UploadFile = File(...)):
     image = image.resize((224, 224))
     img_array = np.array(image) / 255.0
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dim
-    
+
     # Predict
     prediction = model.predict(img_array)
     class_idx = np.argmax(prediction[0])
     confidence = float(np.max(prediction[0]))
-    
+
     return {"class": int(class_idx), "confidence": confidence}
 
 # Run: uvicorn app:app --reload
@@ -987,23 +987,24 @@ async def predict(file: UploadFile = File(...)):
 
 ### Architecture Selection Guide
 
-| Task | Architecture | Why |
-|------|-------------|-----|
-| **Image Classification** | CNN (Conv2D + MaxPool) | Learns spatial features |
-| **Object Detection** | YOLO, SSD, Faster R-CNN | Localize + classify |
-| **Image Segmentation** | U-Net, DeepLab | Pixel-level classification |
-| **Text Classification** | LSTM/GRU or Transformer | Sequential understanding |
-| **Machine Translation** | Seq2Seq + Attention, Transformer | Encoder-decoder |
-| **Text Generation** | GPT-style Transformer | Autoregressive |
-| **Time Series** | LSTM/GRU or 1D CNN | Temporal patterns |
-| **Tabular Data** | Dense (MLP) | Simple and effective |
-| **Anomaly Detection** | Autoencoder | Reconstruction error |
-| **Image Generation** | GAN, VAE, Diffusion | Generative models |
-| **Speech Recognition** | CNN + RNN or Transformer | Audio spectrograms |
+| Task                     | Architecture                     | Why                        |
+| ------------------------ | -------------------------------- | -------------------------- |
+| **Image Classification** | CNN (Conv2D + MaxPool)           | Learns spatial features    |
+| **Object Detection**     | YOLO, SSD, Faster R-CNN          | Localize + classify        |
+| **Image Segmentation**   | U-Net, DeepLab                   | Pixel-level classification |
+| **Text Classification**  | LSTM/GRU or Transformer          | Sequential understanding   |
+| **Machine Translation**  | Seq2Seq + Attention, Transformer | Encoder-decoder            |
+| **Text Generation**      | GPT-style Transformer            | Autoregressive             |
+| **Time Series**          | LSTM/GRU or 1D CNN               | Temporal patterns          |
+| **Tabular Data**         | Dense (MLP)                      | Simple and effective       |
+| **Anomaly Detection**    | Autoencoder                      | Reconstruction error       |
+| **Image Generation**     | GAN, VAE, Diffusion              | Generative models          |
+| **Speech Recognition**   | CNN + RNN or Transformer         | Audio spectrograms         |
 
 ### Quick Architecture Templates
 
 #### Tabular Data (Dense/MLP)
+
 ```python
 model = models.Sequential([
     layers.Dense(128, activation='relu', input_shape=(n_features,)),
@@ -1017,6 +1018,7 @@ model = models.Sequential([
 ```
 
 #### Image Classification (CNN)
+
 ```python
 model = models.Sequential([
     layers.Conv2D(32, 3, activation='relu', input_shape=(H, W, C)),
@@ -1033,6 +1035,7 @@ model = models.Sequential([
 ```
 
 #### Text Classification (LSTM)
+
 ```python
 model = models.Sequential([
     layers.Embedding(vocab_size, 128, input_length=max_len),
@@ -1044,6 +1047,7 @@ model = models.Sequential([
 ```
 
 #### Autoencoder (Anomaly Detection)
+
 ```python
 # Encoder
 encoder = models.Sequential([
@@ -1189,18 +1193,18 @@ model.evaluate(X_test, y_test)  # ~92% accuracy
 
 ### Top 10 Mistakes Beginners Make
 
-| # | Mistake | Fix |
-|---|---------|-----|
-| 1 | **Not scaling inputs** | Always normalize: `/255` for images, `StandardScaler` for tabular |
-| 2 | **Wrong loss function** | Binary → `binary_crossentropy`, Multi → `sparse_categorical_crossentropy` |
-| 3 | **Wrong output activation** | Binary → `sigmoid`, Multi → `softmax`, Regression → `None` |
-| 4 | **Not enough data** | Use data augmentation, transfer learning, or get more data |
-| 5 | **Training too long** | Use `EarlyStopping` callback |
-| 6 | **Learning rate too high** | Start with 0.001 for Adam |
-| 7 | **Not using validation set** | Always use `validation_split` or separate validation data |
-| 8 | **Forgetting to reshape** | CNN needs `(batch, height, width, channels)`, LSTM needs `(batch, timesteps, features)` |
-| 9 | **Data leakage** | Scale AFTER splitting — `fit_transform` on train, `transform` on test |
-| 10 | **Not checking model.summary()** | Always verify architecture before training |
+| #   | Mistake                          | Fix                                                                                     |
+| --- | -------------------------------- | --------------------------------------------------------------------------------------- |
+| 1   | **Not scaling inputs**           | Always normalize: `/255` for images, `StandardScaler` for tabular                       |
+| 2   | **Wrong loss function**          | Binary → `binary_crossentropy`, Multi → `sparse_categorical_crossentropy`               |
+| 3   | **Wrong output activation**      | Binary → `sigmoid`, Multi → `softmax`, Regression → `None`                              |
+| 4   | **Not enough data**              | Use data augmentation, transfer learning, or get more data                              |
+| 5   | **Training too long**            | Use `EarlyStopping` callback                                                            |
+| 6   | **Learning rate too high**       | Start with 0.001 for Adam                                                               |
+| 7   | **Not using validation set**     | Always use `validation_split` or separate validation data                               |
+| 8   | **Forgetting to reshape**        | CNN needs `(batch, height, width, channels)`, LSTM needs `(batch, timesteps, features)` |
+| 9   | **Data leakage**                 | Scale AFTER splitting — `fit_transform` on train, `transform` on test                   |
+| 10  | **Not checking model.summary()** | Always verify architecture before training                                              |
 
 ### Debugging Checklist
 
@@ -1263,16 +1267,16 @@ model = keras.models.load_model('model.keras')
 
 ### Problem → Solution Map
 
-| If... | Then... |
-|-------|---------|
-| Loss not decreasing | Lower learning rate, check data preprocessing |
-| Overfitting (val_loss up) | Add Dropout, L2, augmentation, EarlyStopping |
-| Underfitting (both bad) | Bigger model, more layers/neurons, more epochs |
-| Accuracy stuck at ~50% | Check labels, check loss function, shuffle data |
-| NaN loss | Lower LR, check for NaN in data, gradient clipping |
-| Out of memory | Reduce batch size, use smaller model |
-| Slow training | Use GPU, reduce model size, use transfer learning |
-| Small dataset | Transfer learning + data augmentation |
+| If...                     | Then...                                            |
+| ------------------------- | -------------------------------------------------- |
+| Loss not decreasing       | Lower learning rate, check data preprocessing      |
+| Overfitting (val_loss up) | Add Dropout, L2, augmentation, EarlyStopping       |
+| Underfitting (both bad)   | Bigger model, more layers/neurons, more epochs     |
+| Accuracy stuck at ~50%    | Check labels, check loss function, shuffle data    |
+| NaN loss                  | Lower LR, check for NaN in data, gradient clipping |
+| Out of memory             | Reduce batch size, use smaller model               |
+| Slow training             | Use GPU, reduce model size, use transfer learning  |
+| Small dataset             | Transfer learning + data augmentation              |
 
 ---
 
