@@ -117,7 +117,7 @@ Input:  x₁, x₂, x₃
 Weights: w₁, w₂, w₃
 Bias: b
 
-Step 1: z = (x₁·w₁) + (x₂·w₂) + (x₃·w₃) + b     ← weighted sum
+Step 1: z = (x₁·w₁) + (x₂·w₂) + (x₃·w₃) + b            ← weighted sum
 Step 2: a = activation(z)                              ← activation function
 Step 3: output = a                                     ← neuron output
 ```

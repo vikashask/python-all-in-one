@@ -5,6 +5,7 @@
 ---
 
 ## 1. What is NumPy?
+
 - **Numerical Python** — foundation for scientific computing
 - Provides **N-dimensional arrays (ndarray)** — faster than Python lists (50-100x)
 - Built on C → vectorized operations, no explicit loops needed
@@ -105,6 +106,7 @@ matrix + col_vector
 ```
 
 **Rules:**
+
 1. Pad dimensions with 1 on the left
 2. Size-1 dimensions stretch to match
 3. Incompatible sizes → Error
@@ -272,33 +274,33 @@ people['age']             # Access column → [25, 30]
 
 ## ⚡ Performance Tips
 
-| Tip | Why |
-|-----|-----|
-| **Vectorize** — avoid Python loops | 100x+ faster |
-| **Use correct dtype** | `float32` saves 50% memory vs `float64` |
-| **Use views, not copies** | Slicing = view, fancy indexing = copy |
-| **Pre-allocate arrays** | Avoid growing arrays dynamically |
-| **Leverage broadcasting** | No need to manually expand dimensions |
+| Tip                                | Why                                     |
+| ---------------------------------- | --------------------------------------- |
+| **Vectorize** — avoid Python loops | 100x+ faster                            |
+| **Use correct dtype**              | `float32` saves 50% memory vs `float64` |
+| **Use views, not copies**          | Slicing = view, fancy indexing = copy   |
+| **Pre-allocate arrays**            | Avoid growing arrays dynamically        |
+| **Leverage broadcasting**          | No need to manually expand dimensions   |
 
 ---
 
 ## 🧾 Cheat Sheet
 
-| Task | Code |
-|------|------|
-| Create array | `np.array([1,2,3])` |
-| Zeros/Ones | `np.zeros((3,3))` / `np.ones((2,2))` |
-| Range | `np.arange(0,10,2)` |
-| Shape | `arr.shape` |
-| Reshape | `arr.reshape(3,4)` |
-| Transpose | `arr.T` |
-| Sum/Mean | `arr.sum()` / `arr.mean()` |
-| Filter | `arr[arr > 5]` |
-| Conditional | `np.where(arr > 5, 'Y', 'N')` |
-| Stack | `np.vstack((a,b))` / `np.hstack((a,b))` |
-| Random | `np.random.default_rng(42).random((3,3))` |
-| Matrix mult | `A @ B` |
-| Save/Load | `np.save()` / `np.load()` |
+| Task         | Code                                      |
+| ------------ | ----------------------------------------- |
+| Create array | `np.array([1,2,3])`                       |
+| Zeros/Ones   | `np.zeros((3,3))` / `np.ones((2,2))`      |
+| Range        | `np.arange(0,10,2)`                       |
+| Shape        | `arr.shape`                               |
+| Reshape      | `arr.reshape(3,4)`                        |
+| Transpose    | `arr.T`                                   |
+| Sum/Mean     | `arr.sum()` / `arr.mean()`                |
+| Filter       | `arr[arr > 5]`                            |
+| Conditional  | `np.where(arr > 5, 'Y', 'N')`             |
+| Stack        | `np.vstack((a,b))` / `np.hstack((a,b))`   |
+| Random       | `np.random.default_rng(42).random((3,3))` |
+| Matrix mult  | `A @ B`                                   |
+| Save/Load    | `np.save()` / `np.load()`                 |
 
 ---
 

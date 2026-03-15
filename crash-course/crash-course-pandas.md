@@ -5,6 +5,7 @@
 ---
 
 ## 1. What is Pandas?
+
 - **Data manipulation library** built on NumPy
 - Two main structures: **Series** (1D) and **DataFrame** (2D table)
 - Think of it as **Excel/SQL in Python**
@@ -71,6 +72,7 @@ df[df['name'].isin(['Alice', 'Bob'])]
 ## 4. Data Cleaning
 
 ### Missing Data
+
 ```python
 df.isna().sum()              # Count NaN per column
 df.dropna()                  # Drop rows with any NaN
@@ -83,12 +85,14 @@ df.bfill()                   # Backward fill (next value)
 ```
 
 ### Duplicates
+
 ```python
 df.duplicated().sum()        # Count duplicates
 df.drop_duplicates()         # Remove duplicates
 ```
 
 ### String Cleaning
+
 ```python
 df['name'].str.lower()       # lowercase
 df['name'].str.upper()       # UPPERCASE
@@ -298,14 +302,14 @@ df.unstack()               # Pivot inner level to columns
 
 ## 16. Performance Tips
 
-| Tip | Impact |
-|-----|--------|
-| **Use vectorized ops** | 100x faster than `.iterrows()` |
-| **Use `.astype('category')`** | For low-cardinality string columns |
-| **Downcast numerics** | `pd.to_numeric(df['col'], downcast='integer')` |
-| **Read only needed columns** | `pd.read_csv(usecols=[...])` |
-| **Use chunking** | `pd.read_csv(chunksize=10000)` for huge files |
-| **Use `.query()`** | `df.query('age > 25 and salary > 50000')` |
+| Tip                           | Impact                                         |
+| ----------------------------- | ---------------------------------------------- |
+| **Use vectorized ops**        | 100x faster than `.iterrows()`                 |
+| **Use `.astype('category')`** | For low-cardinality string columns             |
+| **Downcast numerics**         | `pd.to_numeric(df['col'], downcast='integer')` |
+| **Read only needed columns**  | `pd.read_csv(usecols=[...])`                   |
+| **Use chunking**              | `pd.read_csv(chunksize=10000)` for huge files  |
+| **Use `.query()`**            | `df.query('age > 25 and salary > 50000')`      |
 
 ---
 
@@ -387,24 +391,24 @@ sns.violinplot(x='day', y='total_bill', data=df)
 
 ## 🧾 Pandas Cheat Sheet
 
-| Task | Code |
-|------|------|
-| Read CSV | `pd.read_csv('file.csv')` |
-| First 5 rows | `df.head()` |
-| Shape | `df.shape` |
-| Column types | `df.dtypes` |
-| Select column | `df['col']` |
-| Filter rows | `df[df['col'] > 5]` |
-| Sort | `df.sort_values('col')` |
-| Group & mean | `df.groupby('col').mean()` |
-| Merge | `pd.merge(df1, df2, on='key')` |
-| Pivot | `pd.pivot_table(df, values, index, columns)` |
-| Fill NaN | `df.fillna(0)` |
-| Drop NaN | `df.dropna()` |
-| Apply func | `df['col'].apply(func)` |
-| Unique values | `df['col'].nunique()` |
-| Value counts | `df['col'].value_counts()` |
-| Save CSV | `df.to_csv('out.csv', index=False)` |
+| Task          | Code                                         |
+| ------------- | -------------------------------------------- |
+| Read CSV      | `pd.read_csv('file.csv')`                    |
+| First 5 rows  | `df.head()`                                  |
+| Shape         | `df.shape`                                   |
+| Column types  | `df.dtypes`                                  |
+| Select column | `df['col']`                                  |
+| Filter rows   | `df[df['col'] > 5]`                          |
+| Sort          | `df.sort_values('col')`                      |
+| Group & mean  | `df.groupby('col').mean()`                   |
+| Merge         | `pd.merge(df1, df2, on='key')`               |
+| Pivot         | `pd.pivot_table(df, values, index, columns)` |
+| Fill NaN      | `df.fillna(0)`                               |
+| Drop NaN      | `df.dropna()`                                |
+| Apply func    | `df['col'].apply(func)`                      |
+| Unique values | `df['col'].nunique()`                        |
+| Value counts  | `df['col'].value_counts()`                   |
+| Save CSV      | `df.to_csv('out.csv', index=False)`          |
 
 ---
 
