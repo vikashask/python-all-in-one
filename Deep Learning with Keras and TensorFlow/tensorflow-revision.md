@@ -5,6 +5,7 @@
 ---
 
 ## Table of Contents
+
 1. [What is TensorFlow?](#1-what-is-tensorflow)
 2. [Installation & Setup](#2-installation--setup)
 3. [Tensors — Core Data Structure](#3-tensors--core-data-structure)
@@ -65,6 +66,7 @@ print(tf.config.list_physical_devices('GPU'))
 ```
 
 ### GPU Memory Growth (prevent OOM)
+
 ```python
 gpus = tf.config.list_physical_devices('GPU')
 if gpus:
@@ -101,6 +103,7 @@ t.numpy()
 ```
 
 ### Tensor Properties
+
 ```python
 t = tf.constant([[1.0, 2.0], [3.0, 4.0]])
 
@@ -111,6 +114,7 @@ t.numpy()        # Convert to NumPy array
 ```
 
 ### Tensor Operations
+
 ```python
 a = tf.constant([[1., 2.], [3., 4.]])
 b = tf.constant([[5., 6.], [7., 8.]])
@@ -137,6 +141,7 @@ tf.stack([a, b], axis=0)
 ```
 
 ### Type Casting
+
 ```python
 tf.cast(t, tf.float64)
 tf.cast(t, tf.int32)
@@ -195,6 +200,7 @@ grads = tape.gradient(y, [w, b])
 ## 6. Building Models (tf.keras)
 
 ### Sequential API
+
 ```python
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -210,6 +216,7 @@ model.summary()
 ```
 
 ### Functional API
+
 ```python
 inputs = keras.Input(shape=(784,))
 x = layers.Dense(256, activation='relu')(inputs)
@@ -221,6 +228,7 @@ model = keras.Model(inputs=inputs, outputs=outputs, name='mlp')
 ```
 
 ### Model Subclassing
+
 ```python
 class MyModel(keras.Model):
     def __init__(self):
@@ -240,6 +248,7 @@ class MyModel(keras.Model):
 ## 7. Layers (tf.keras.layers)
 
 ### Common Layers
+
 ```python
 layers.Dense(units, activation=None, use_bias=True,
              kernel_regularizer=None, kernel_initializer='glorot_uniform')
@@ -450,6 +459,7 @@ model.fit(dataset, epochs=10)
 ```
 
 ### TFRecord (optimized binary format)
+
 ```python
 # Write TFRecord
 with tf.io.TFRecordWriter('data.tfrecord') as writer:
@@ -575,6 +585,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 ```
 
 ### Stacked LSTM
+
 ```python
 layers.LSTM(128, return_sequences=True),
 layers.LSTM(64, return_sequences=True),
@@ -582,6 +593,7 @@ layers.LSTM(32)
 ```
 
 ### GRU
+
 ```python
 layers.GRU(128, return_sequences=True)
 ```
@@ -673,18 +685,20 @@ def predict(x):
 ```
 
 ### Eager vs Graph Mode
-| Feature       | Eager (default) | Graph (`@tf.function`) |
-|---------------|-----------------|------------------------|
-| Execution     | Immediate       | Compiled graph         |
-| Debugging     | Easy            | Harder                 |
-| Performance   | Slower          | Faster                 |
-| Python control flow | ✓        | Limited (use `tf.cond`, `tf.while_loop`) |
+
+| Feature             | Eager (default) | Graph (`@tf.function`)                   |
+| ------------------- | --------------- | ---------------------------------------- |
+| Execution           | Immediate       | Compiled graph                           |
+| Debugging           | Easy            | Harder                                   |
+| Performance         | Slower          | Faster                                   |
+| Python control flow | ✓               | Limited (use `tf.cond`, `tf.while_loop`) |
 
 ---
 
 ## 21. TensorFlow Lite & TF Serving
 
 ### TF Lite (Mobile/Edge)
+
 ```python
 # Convert
 converter = tf.lite.TFLiteConverter.from_saved_model('saved_model_path/')
@@ -706,6 +720,7 @@ output = interpreter.get_tensor(output_details[0]['index'])
 ```
 
 ### TF Serving (Production)
+
 ```bash
 # Save as SavedModel
 model.save('saved_model/1/')           # Versioned directory
@@ -751,41 +766,53 @@ strategy = tf.distribute.MultiWorkerMirroredStrategy()
 ## 23. Interview Questions
 
 **Q1. What is the difference between TensorFlow 1.x and TensorFlow 2.x?**
+
 > TF 1.x used a static computation graph: define-then-run (Session.run). TF 2.x uses eager execution by default: define-and-run (imperative style). TF 2.x also integrates Keras as its primary API and simplifies deployment.
 
 **Q2. What is `@tf.function` and why is it used?**
+
 > It compiles a Python function into a TensorFlow computation graph (tracing). Subsequent calls skip Python overhead and execute the graph directly — significantly faster, especially for training loops with many ops.
 
 **Q3. What is the difference between `tf.constant` and `tf.Variable`?**
+
 > `tf.constant` creates an immutable tensor. `tf.Variable` creates a mutable tensor used for trainable parameters (weights/biases) that can be updated via `assign()` or optimizers.
 
 **Q4. How does `tf.GradientTape` work?**
+
 > It records all operations on watched tensors within its context. Calling `tape.gradient(loss, variables)` computes the gradient of `loss` w.r.t. each variable using reverse-mode autodiff.
 
 **Q5. What is the `tf.data` API and why is it preferred?**
+
 > It builds optimized input pipelines that can run on CPU in parallel with GPU training. Key ops: `.shuffle()`, `.batch()`, `.map()`, `.prefetch()`, `.cache()`. `.prefetch(AUTOTUNE)` overlaps data loading with model computation.
 
 **Q6. What is the difference between `include_top=True` and `include_top=False` in pretrained models?**
+
 > `include_top=True` includes the final classification layers (Dense + Softmax) of the original model. `include_top=False` removes them so you can add your own head for a different number of classes.
 
 **Q7. What is the purpose of `model(x, training=True)` vs `model(x, training=False)`?**
+
 > The `training` flag controls layers like Dropout (active during training, inactive during inference) and BatchNormalization (uses batch stats during training, running stats during inference).
 
 **Q8. What is `MirroredStrategy` in TF distributed training?**
+
 > It replicates the model on all available GPUs on a single machine. Each GPU processes a different batch slice, gradients are aggregated (all-reduce), and weights are kept in sync.
 
 **Q9. What is TF Lite quantization?**
+
 > Reduces model precision from float32 to int8 or float16 to shrink model size and speed up inference on mobile/edge devices. Trade-off: slight accuracy drop for significantly lower latency and memory use.
 
 **Q10. Explain the difference between `SparseCategoricalCrossentropy` and `CategoricalCrossentropy`.**
+
 > `CategoricalCrossentropy` expects one-hot encoded labels. `SparseCategoricalCrossentropy` expects integer class indices. Internally they compute the same loss — the difference is input format.
 
 **Q11. What is SavedModel format vs H5 format?**
+
 > SavedModel (directory) saves the full TensorFlow program including computation graphs, variables, and signatures — suitable for TF Serving. H5 (`.h5`) is a legacy Keras format that only works with tf.keras models.
 
 **Q12. How do you prevent overfitting in TensorFlow models?**
+
 > Dropout layers, L1/L2 regularization (`kernel_regularizer`), BatchNormalization, EarlyStopping callback, ReduceLROnPlateau, data augmentation via ImageDataGenerator or tf.data transforms.
 
 ---
 
-*Last updated: May 2026*
+_Last updated: May 2026_

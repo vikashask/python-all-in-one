@@ -135,7 +135,7 @@ Is it regression?
 | **ReLU**    | [0, ∞)  | Hidden layers | Fast, avoids vanishing gradient | Dying ReLU problem |
 | **Sigmoid** | (0, 1)  | Binary output | Smooth gradient                 | Vanishing gradient |
 | **Tanh**    | (-1, 1) | Hidden layers | Zero-centered                   | Vanishing gradient |
-| **Softmax** | (0, 1)  | Multi-class   | Probability distribution        | Expensive compute  |
+| **Softmax** * | (0, 1)  | Multi-class   | Probability distribution        | Expensive compute  |
 
 **Memory Rule**:
 
@@ -148,7 +148,7 @@ Is it regression?
 
 ## 🏗️ 5. MODEL ARCHITECTURE PATTERNS
 
-### 5.1 CNN Architecture (LeNet-5 Pattern)
+### 5.1 CNN Architecture (LeNet-5 Pattern) *
 
 **Memory Sequence**: **C-P-C-P-F**
 
@@ -159,7 +159,7 @@ Input → Conv → Pool → Conv → Pool → Flatten → Dense → Output
         Extract  sample Extract sample vector
 ```
 
-### 5.2 RNN/LSTM Architecture
+### 5.2 RNN/LSTM Architecture *
 
 **Memory of Memory**:
 
@@ -179,7 +179,7 @@ Memory Hook: "What to forget, what to remember, what to output"
 
 ```
           Predicted
-         | Yes  | No   |
+          | Yes  | No   |
 Actual Yes| TP   | FN   | ← Type II Error
 Actual No | FP   | TN   | ← Type I Error
 ```
