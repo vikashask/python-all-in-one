@@ -1,5 +1,7 @@
 # Phase 1: What is Machine Learning
 
+**Navigation:** [Previous (Phase 0 Notebook)](./Phase-0-Prerequisites.ipynb) | [Practice Notebook](./Phase-1-ML-Concepts.ipynb) | [Next (Phase 2A)](./Phase-2-Supervised-Learning.md)
+
 ## 🎯 Learning Objectives
 
 By the end of this phase, you will:
@@ -10,8 +12,8 @@ By the end of this phase, you will:
 - ✅ Understand core concepts: features, labels, training, testing
 - ✅ Recognize overfitting and underfitting
 
-**Time Required:** 1 week  
-**Difficulty:** Beginner  
+**Time Required:** 1 week
+**Difficulty:** Beginner
 **Prerequisites:** Phase 0 completed
 
 ---
@@ -706,16 +708,16 @@ model_c_test_acc = 0.64
 
 ## 💡 Common Misconceptions
 
-❌ **"ML is magic"**  
+❌ **"ML is magic"**
 ✅ ML is statistics + optimization. It finds patterns in data.
 
-❌ **"More data always helps"**  
+❌ **"More data always helps"**
 ✅ Quality > Quantity. 100 good examples beat 10,000 bad ones.
 
-❌ **"Complex models are better"**  
+❌ **"Complex models are better"**
 ✅ Simple models often work best. Start simple, add complexity if needed.
 
-❌ **"100% accuracy is the goal"**  
+❌ **"100% accuracy is the goal"**
 ✅ Perfect accuracy on training data = overfitting!
 
 ---
@@ -724,6 +726,7 @@ model_c_test_acc = 0.64
 
 Ready to build real models? Move to:
 👉 [Phase 2: Supervised Learning](./Phase-2-Supervised-Learning.md)
+👉 Practice notebook first: [Phase-1-ML-Concepts.ipynb](./Phase-1-ML-Concepts.ipynb)
 
 This is where the fun begins! 🚀
 

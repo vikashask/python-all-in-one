@@ -1,5 +1,7 @@
 # Phase 4: Feature Engineering & Data Processing
 
+**Navigation:** [Previous (Phase 3)](./Phase-3-Unsupervised-Learning.md) | [Practice Notebook](./Phase-4-Feature-Engineering.ipynb) | [Next (Phases 5-9)](./Phase-5-9-Advanced-ML.md)
+
 ## 🎯 Learning Objectives
 
 By the end of this phase, you will:
@@ -12,8 +14,8 @@ By the end of this phase, you will:
 - ✅ Select important features
 - ✅ Build complete data pipelines
 
-**Time Required:** 2 weeks ⭐ CRITICAL SKILL  
-**Difficulty:** Intermediate  
+**Time Required:** 2 weeks ⭐ CRITICAL SKILL
+**Difficulty:** Intermediate
 **Note:** This is 70% of real ML work!
 
 ---
@@ -882,4 +884,5 @@ print("  - Model training")
 ## 📚 Next Phase
 
 Ready to evaluate and tune your models?
-👉 [Phase 5: Model Evaluation & Tuning](./Phase-5-Model-Evaluation.md)
+👉 [Phases 5-9: Advanced Machine Learning](./Phase-5-9-Advanced-ML.md)
+👉 Practice notebook: [Phase-4-Feature-Engineering.ipynb](./Phase-4-Feature-Engineering.ipynb)

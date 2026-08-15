@@ -1,5 +1,7 @@
 # Phase 3: Unsupervised Learning
 
+**Navigation:** [Previous (Phase 2B)](./Phase-2-Supervised-Learning-Classification.md) | [Practice Notebook](./Phase-3-Unsupervised-Learning.ipynb) | [Next (Phase 4)](./Phase-4-Feature-Engineering.md)
+
 ## 🎯 Learning Objectives
 
 By the end of this phase, you will:
@@ -10,8 +12,8 @@ By the end of this phase, you will:
 - ✅ Identify patterns in unlabeled data
 - ✅ Visualize high-dimensional data
 
-**Time Required:** 1-2 weeks  
-**Difficulty:** Intermediate  
+**Time Required:** 1-2 weeks
+**Difficulty:** Intermediate
 **Prerequisites:** Phases 0-2 completed
 
 ---
@@ -852,5 +854,6 @@ print("\n✓ Results saved to customer_segments.csv")
 
 Excellent work! Now master the practical skills:
 👉 [Phase 4: Feature Engineering & Data Processing](./Phase-4-Feature-Engineering.md)
+👉 Practice notebook: [Phase-3-Unsupervised-Learning.ipynb](./Phase-3-Unsupervised-Learning.ipynb)
 
 **Remember:** 70% of ML work is data preparation!

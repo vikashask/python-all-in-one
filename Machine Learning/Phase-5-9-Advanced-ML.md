@@ -1,5 +1,7 @@
 # Phases 5-9: Advanced Machine Learning
 
+**Navigation:** [Previous (Phase 4)](./Phase-4-Feature-Engineering.md) | [Practice Notebook (Phases 5-6)](./Phase-5-6-Advanced-ML.ipynb) | [Back to Start](./00-Start-Here.ipynb)
+
 This document covers the advanced phases of machine learning. Each section can be expanded into separate files as needed.
 
 ---
@@ -861,6 +863,6 @@ You now have a complete roadmap to becoming an ML practitioner. Remember:
 
 ---
 
-**Last Updated:** January 2026  
-**Author:** ML Learning Path  
+**Last Updated:** January 2026
+**Author:** ML Learning Path
 **Version:** 1.0

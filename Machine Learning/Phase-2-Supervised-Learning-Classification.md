@@ -1,5 +1,7 @@
 # Phase 2B: Classification Algorithms
 
+**Navigation:** [Previous (Phase 2A Regression)](./Phase-2-Supervised-Learning.md) | [Practice Notebook (Classification)](./Phase-2-Classification.ipynb) | [Next (Phase 3)](./Phase-3-Unsupervised-Learning.md)
+
 ## 🎯 What is Classification?
 
 **Goal:** Predict which category (class) something belongs to.
@@ -20,7 +22,7 @@
 
 Despite the name, it's for **classification**, not regression! Predicts probability of belonging to a class.
 
-**Formula:** $P(y=1) = \frac{1}{1 + e^{-(mx + b)}}$  
+**Formula:** $P(y=1) = \frac{1}{1 + e^{-(mx + b)}}$
 Output: Probability between 0 and 1
 
 ### Binary Classification Example: Disease Prediction
@@ -1053,6 +1055,7 @@ for idx, pred in enumerate(predictions):
 
 Congratulations! You've mastered supervised learning. Move to:
 👉 [Phase 3: Unsupervised Learning](./Phase-3-Unsupervised-Learning.md)
+👉 Practice notebook: [Phase-2-Classification.ipynb](./Phase-2-Classification.ipynb)
 
 ---
 

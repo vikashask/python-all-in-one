@@ -1,5 +1,7 @@
 # Phase 2: Supervised Learning
 
+**Navigation:** [Previous (Phase 1)](./Phase-1-ML-Concepts.md) | [Practice Notebook (Regression)](./Phase-2-Regression.ipynb) | [Next (Phase 2B Classification)](./Phase-2-Supervised-Learning-Classification.md)
+
 ## 🎯 Learning Objectives
 
 By the end of this phase, you will:
@@ -10,8 +12,8 @@ By the end of this phase, you will:
 - ✅ Build end-to-end prediction models
 - ✅ Choose the right algorithm for your problem
 
-**Time Required:** 3-4 weeks ⭐ MOST IMPORTANT PHASE  
-**Difficulty:** Intermediate  
+**Time Required:** 3-4 weeks ⭐ MOST IMPORTANT PHASE
+**Difficulty:** Intermediate
 **Prerequisites:** Phases 0-1 completed
 
 ---
@@ -513,7 +515,7 @@ print(f"MAE: {mae}")  # Output: 10.0
 # Interpretation: On average, predictions are off by 10 units
 ```
 
-**Pros:** Easy to interpret, same units as target  
+**Pros:** Easy to interpret, same units as target
 **Cons:** Doesn't penalize large errors heavily
 
 ### 2. Mean Squared Error (MSE)
@@ -531,7 +533,7 @@ rmse = np.sqrt(mse)
 print(f"RMSE: {rmse}")  # Output: 11.18
 ```
 
-**Pros:** Penalizes large errors  
+**Pros:** Penalizes large errors
 **Cons:** Sensitive to outliers, different units (squared)
 
 ### 3. R² Score (Coefficient of Determination)
@@ -550,7 +552,7 @@ print(f"R²: {r2}")  # Output: 0.975
 # negative = model worse than predicting mean
 ```
 
-**Pros:** Standardized (0-1), easy to interpret  
+**Pros:** Standardized (0-1), easy to interpret
 **Cons:** Can be misleading with non-linear data
 
 ### Complete Example
